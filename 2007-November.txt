@@ -1,0 +1,873 @@
+From tobias at ppckernel.org  Tue Nov 13 03:50:09 2007
+From: tobias at ppckernel.org (Tobias McNulty)
+Date: Mon, 12 Nov 2007 21:50:09 -0500
+Subject: [Destar-user] Adding custom IAX/SIP trunks
+Message-ID: <473910E1.1050204@ppckernel.org>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+I'm trying to connect Asterisk to a VoicePulse account with DeStar.  I
+don't think the IAX or SIP trunk forms provide enough flexibility for me
+to do this, however.  I see two potential ways to accomplish this:
+
+1) create the config file manually and somehow tell DeStar to include it
+(is this possible?)
+
+2) write my own configurator for VoicePulse.  I looked at the format of
+the existing config generators and it looks quite simple, so I wouldn't
+mind doing this.  However, whenever I tried to generate a FWD or Iaxtel
+trunk (just for an example, I don't actually have an account), it
+crashed.  Are these supposedly working?  Should I install 0.2.2 from source?
+
+I'm just running the package in Debian stable (etch).  I can post the
+error messages if this problem isn't known yet.
+
+Otherwise the software looks great and I'm really looking forward to
+using it more.  This is coming from someone who's spent a week+ trying
+to get freepbx running on Debian without taking over his entire system.  ;)
+
+Nice work.
+
+Toby
+- --
+Tobias McNulty (tobias at ppckernel.org)             Mobile: (607) 227-5699
+http://cs.earlham.edu/~tobias
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFHORDh1x/AN8ZLi94RAloEAKCY9Ysj9bel6/96WcdID8LaaH82hgCgitLX
+4E9JwkNpRf2PNLGCaZ+3NOg=
+=CubL
+-----END PGP SIGNATURE-----
+
+
+From alejandro.rios at avatar.com.co  Tue Nov 13 19:43:14 2007
+From: alejandro.rios at avatar.com.co (=?ISO-8859-1?Q?Alejandro_Rios_Pe=F1a?=)
+Date: Tue, 13 Nov 2007 13:43:14 -0500
+Subject: [Destar-user] Adding custom IAX/SIP trunks
+In-Reply-To: <473910E1.1050204@ppckernel.org>
+References: <473910E1.1050204@ppckernel.org>
+Message-ID: <4739F042.7050305@openboxltda.com>
+
+Hello tobias.
+
+Pleas try to use last svn trunk:
+
+  /svn checkout svn://svn.berlios.de/destar/trunk/
+
+
+Or if you want, you could also use the last debian package available in 
+experimental:
+
+  http://packages.debian.org/experimental/destar
+
+
+Also, if the normal sip trunk configlet does not meet your provider 
+setup, you can always make a new configlet and help us extens DeStar:
+
+ http://openfacts.berlios.de/index-en.phtml?title=DestarCustomConfiglet
+
+
+Thanks for using DeStar.
+
+
+Tobias McNulty wrote:
+> -----BEGIN PGP SIGNED MESSAGE-----
+> Hash: SHA1
+>
+> I'm trying to connect Asterisk to a VoicePulse account with DeStar.  I
+> don't think the IAX or SIP trunk forms provide enough flexibility for me
+> to do this, however.  I see two potential ways to accomplish this:
+>
+> 1) create the config file manually and somehow tell DeStar to include it
+> (is this possible?)
+>
+> 2) write my own configurator for VoicePulse.  I looked at the format of
+> the existing config generators and it looks quite simple, so I wouldn't
+> mind doing this.  However, whenever I tried to generate a FWD or Iaxtel
+> trunk (just for an example, I don't actually have an account), it
+> crashed.  Are these supposedly working?  Should I install 0.2.2 from source?
+>
+> I'm just running the package in Debian stable (etch).  I can post the
+> error messages if this problem isn't known yet.
+>
+> Otherwise the software looks great and I'm really looking forward to
+> using it more.  This is coming from someone who's spent a week+ trying
+> to get freepbx running on Debian without taking over his entire system.  ;)
+>
+> Nice work.
+>
+> Toby
+> - --
+> Tobias McNulty (tobias at ppckernel.org)             Mobile: (607) 227-5699
+> http://cs.earlham.edu/~tobias
+> -----BEGIN PGP SIGNATURE-----
+> Version: GnuPG v1.4.6 (GNU/Linux)
+>
+> iD8DBQFHORDh1x/AN8ZLi94RAloEAKCY9Ysj9bel6/96WcdID8LaaH82hgCgitLX
+> 4E9JwkNpRf2PNLGCaZ+3NOg=
+> =CubL
+> -----END PGP SIGNATURE-----
+> _______________________________________________
+> Destar-user mailing list
+> Destar-user at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/destar-user
+>
+>   
+
+
+
+From tzafrir.cohen at xorcom.com  Tue Nov 13 20:17:10 2007
+From: tzafrir.cohen at xorcom.com (Tzafrir Cohen)
+Date: Tue, 13 Nov 2007 21:17:10 +0200
+Subject: [Destar-user] Adding custom IAX/SIP trunks
+In-Reply-To: <4739F042.7050305@openboxltda.com>
+References: <473910E1.1050204@ppckernel.org> <4739F042.7050305@openboxltda.com>
+Message-ID: <20071113191710.GB6765@xorcom.com>
+
+On Tue, Nov 13, 2007 at 01:43:14PM -0500, Alejandro Rios Pe?a wrote:
+> Hello tobias.
+> 
+> Pleas try to use last svn trunk:
+> 
+>   /svn checkout svn://svn.berlios.de/destar/trunk/
+> 
+> 
+> Or if you want, you could also use the last debian package available in 
+> experimental:
+> 
+>   http://packages.debian.org/experimental/destar
+
+Aren't some extra libraries (not from Etch) required?
+
+> 
+> 
+> Also, if the normal sip trunk configlet does not meet your provider 
+> setup, you can always make a new configlet and help us extens DeStar:
+> 
+>  http://openfacts.berlios.de/index-en.phtml?title=DestarCustomConfiglet
+
+
+Why should the custom configlet reimplement CreateAsteriskConfig ? 
+Can't you inherit from the existing sip trunk?
+
+-- 
+               Tzafrir Cohen       
+icq#16849755              jabber:tzafrir.cohen at xorcom.com
++972-50-7952406           mailto:tzafrir.cohen at xorcom.com       
+http://www.xorcom.com  iax:guest at local.xorcom.com/tzafrir
+
+
+From tobias at ppckernel.org  Thu Nov 15 04:30:32 2007
+From: tobias at ppckernel.org (Tobias McNulty)
+Date: Wed, 14 Nov 2007 22:30:32 -0500
+Subject: [Destar-user] Adding custom IAX/SIP trunks
+In-Reply-To: <4739F042.7050305@openboxltda.com>
+References: <473910E1.1050204@ppckernel.org> <4739F042.7050305@openboxltda.com>
+Message-ID: <473BBD58.8010807@ppckernel.org>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Alejandro Rios Pe?a wrote:
+> Hello tobias.
+> 
+> Pleas try to use last svn trunk:
+> 
+>   /svn checkout svn://svn.berlios.de/destar/trunk/
+
+I just did this and got the server running.  I connected and created an
+admin account, and logged back in.  Now I'm trying to create a phone,
+but there is no link on the Phones page to do this!  ????
+
+> Also, if the normal sip trunk configlet does not meet your provider 
+> setup, you can always make a new configlet and help us extens DeStar:
+> 
+>  http://openfacts.berlios.de/index-en.phtml?title=DestarCustomConfiglet
+
+That looks great; I was looking for a page like that but didn't find it
+before.
+
+Thanks,
+Toby
+- --
+Tobias McNulty (tobias at ppckernel.org)             Mobile: (607) 227-5699
+http://cs.earlham.edu/~tobias
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFHO71Y1x/AN8ZLi94RAm8mAJ9Y9rduB8wrzpRu5ppUgwFr45elGQCeKBZ8
+6rIMQ7uLjCgtFivEFx+HmLQ=
+=X/h9
+-----END PGP SIGNATURE-----
+
+
+From tobias at ppckernel.org  Fri Nov 23 02:34:34 2007
+From: tobias at ppckernel.org (Tobias McNulty)
+Date: Thu, 22 Nov 2007 20:34:34 -0500
+Subject: [Destar-user] Adding custom IAX/SIP trunks
+In-Reply-To: <473BBD58.8010807@ppckernel.org>
+References: <473910E1.1050204@ppckernel.org> <4739F042.7050305@openboxltda.com>
+	<473BBD58.8010807@ppckernel.org>
+Message-ID: <47462E2A.5040003@ppckernel.org>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Tobias McNulty wrote:
+>>   /svn checkout svn://svn.berlios.de/destar/trunk/
+> 
+> I just did this and got the server running.  I connected and created an
+> admin account, and logged back in.  Now I'm trying to create a phone,
+> but there is no link on the Phones page to do this!  ????
+
+Is the answer to this question so obvious that it doesn't even deserve a
+response?  Sorry, I'm still stumped.
+
+Thanks,
+Toby
+- --
+Tobias McNulty (tobias at ppckernel.org)             Mobile: (607) 227-5699
+http://cs.earlham.edu/~tobias
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFHRi4q1x/AN8ZLi94RAvFmAKCgX/yJCQm6n3ClmRylhZvbqaa5AgCbBsXt
+zT6dD6ncgHcDACUeyjf6Af8=
+=IfUA
+-----END PGP SIGNATURE-----
+
+
+From alejandro.rios at avatar.com.co  Fri Nov 23 02:52:02 2007
+From: alejandro.rios at avatar.com.co (=?ISO-8859-1?Q?Alejandro_Rios_Pe=F1a?=)
+Date: Thu, 22 Nov 2007 20:52:02 -0500
+Subject: [Destar-user] Adding custom IAX/SIP trunks
+In-Reply-To: <473BBD58.8010807@ppckernel.org>
+References: <473910E1.1050204@ppckernel.org> <4739F042.7050305@openboxltda.com>
+	<473BBD58.8010807@ppckernel.org>
+Message-ID: <47463242.3000705@openboxltda.com>
+
+Sorry for the late answer.
+
+
+Tobias McNulty wrote:
+> -----BEGIN PGP SIGNED MESSAGE-----
+> Hash: SHA1
+>
+> Alejandro Rios Pe?a wrote:
+>   
+>> Hello tobias.
+>>
+>> Pleas try to use last svn trunk:
+>>
+>>   /svn checkout svn://svn.berlios.de/destar/trunk/
+>>     
+>
+> I just did this and got the server running.  I connected and created an
+> admin account, and logged back in.  Now I'm trying to create a phone,
+> but there is no link on the Phones page to do this!  ????
+>
+>   
+Phones depend on VirtualPBX and Trunk objects, so you may want to create 
+one of each at least.
+
+
+You can also start your configuration file by using the provided example 
+in:   trunk/examples/destar_cfg.py
+
+
+
+
+From tobias at ppckernel.org  Fri Nov 23 04:08:52 2007
+From: tobias at ppckernel.org (Tobias McNulty)
+Date: Thu, 22 Nov 2007 22:08:52 -0500
+Subject: [Destar-user] Adding custom IAX/SIP trunks
+In-Reply-To: <47463242.3000705@openboxltda.com>
+References: <473910E1.1050204@ppckernel.org>
+	<4739F042.7050305@openboxltda.com>	<473BBD58.8010807@ppckernel.org>
+	<47463242.3000705@openboxltda.com>
+Message-ID: <47464444.1030101@ppckernel.org>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Alejandro Rios Pe?a wrote:
+> Phones depend on VirtualPBX and Trunk objects, so you may want to create 
+> one of each at least.
+
+I was missing a VirtualPBX object.  Thanks.  Could you put a note on the
+Phones page stating what the user needs to do before s/he can create a
+phone?
+
+Ok, I was able to configure a basic working setup with VoicePulse and
+DeStar using the SVN checkout, without any custom trunks, for both
+incoming and outgoing calls.  This is great.
+
+Now I need to figure out how to do redundancy.  I will get back to the
+list when I have it figured out or have hit a wall.
+
+Thanks for your help.
+
+Toby
+- --
+Tobias McNulty (tobias at ppckernel.org)             Mobile: (607) 227-5699
+http://cs.earlham.edu/~tobias
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFHRkRE1x/AN8ZLi94RAoWbAKDYMgGhfIubweLN0wV9O6mHZ8V85gCg2B8y
+AGgyOosw7XY9alCVMktVL+I=
+=8aIW
+-----END PGP SIGNATURE-----
+
+
+From tobias at ppckernel.org  Mon Nov 26 01:03:32 2007
+From: tobias at ppckernel.org (Tobias McNulty)
+Date: Sun, 25 Nov 2007 19:03:32 -0500
+Subject: [Destar-user] failure on save config
+Message-ID: <474A0D54.9090203@ppckernel.org>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Using the latest SVN I get a crash when I click "View/Save
+Configuration" under the Administration menu.  The problem is that
+appendValue in configlets.py needs to write a unicode string but it
+doesn't seem to know about unicode.  Attached is a patch that fixes the
+problem for me, and includes better debugging info if an unsupported
+type is discovered again.
+
+Best,
+Toby
+
+
+Traceback (most recent call last):
+  File "/usr/lib/python2.4/site-packages/quixote/publish.py", line 278,
+in process_request
+    output = self.try_publish(request)
+  File "/usr/lib/python2.4/site-packages/quixote/publish.py", line 256,
+in try_publish
+    output = self.root_directory._q_traverse(components)
+  File "/root/destar-svn/page_main.ptl", line 168, in _q_traverse
+    return Directory._q_traverse(self, path)
+  File "/usr/lib/python2.4/site-packages/quixote/directory.py", line 66,
+in _q_traverse
+    return obj._q_traverse(path)
+  File "/usr/lib/python2.4/site-packages/quixote/directory.py", line 94,
+in _q_traverse
+    return super(AccessControlled, self)._q_traverse(path)
+  File "/usr/lib/python2.4/site-packages/quixote/directory.py", line 66,
+in _q_traverse
+    return obj._q_traverse(path)
+  File "/usr/lib/python2.4/site-packages/quixote/directory.py", line 94,
+in _q_traverse
+    return super(AccessControlled, self)._q_traverse(path)
+  File "/usr/lib/python2.4/site-packages/quixote/directory.py", line 70,
+in _q_traverse
+    return obj()
+  File "/root/destar-svn/page_admin_viewconf.ptl", line 83, in _q_index
+    res = backend.createAsteriskConfig()
+  File "/root/destar-svn/backend.py", line 433, in createAsteriskConfig
+    c.createAsteriskConfig()
+  File "/root/destar-svn/cfg_opt_voicemail.py", line 78, in
+createAsteriskConfig
+    c.appendValue(self,"fromstring")
+  File "/root/destar-svn/configlets.py", line 162, in appendValue
+    raise Exception
+Exception
+
+Form:
+
+Cookies:
+QX_session      <snip>
+
+Environment:
+ACCEPT_ENCODING gzip,deflate
+CONTENT_LENGTH  0
+CONTENT_TYPE
+GATEWAY_INTERFACE CGI/1.1
+HTTP_ACCEPT
+text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+HTTP_ACCEPT_CHARSET ISO-8859-1,utf-8;q=0.7,*;q=0.7
+HTTP_ACCEPT_ENCODING gzip,deflate
+HTTP_ACCEPT_LANGUAGE en-us,en;q=0.5
+HTTP_CONNECTION keep-alive
+HTTP_COOKIE     QX_session="<snip>"
+HTTP_HOST       <snip>:8080
+HTTP_KEEP_ALIVE 300
+HTTP_REFERER    http://<snip>:8080/user/info/
+HTTP_USER_AGENT Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.8)
+Gecko/20071022 Ubuntu/7.10 (gutsy) Firefox/2.0.0.8
+PATH_INFO       /admin/viewconf/
+QUERY_STRING
+REMOTE_ADDR     <snip>
+REMOTE_PORT     28954
+REMOTE_USER     admin
+REQUEST_METHOD  GET
+REQUEST_URI     /admin/viewconf/
+SCRIPT_FILENAME
+SCRIPT_NAME
+SERVER_NAME     <snip>
+SERVER_PORT     8080
+SERVER_PROTOCOL HTTP/1.1
+SERVER_SOFTWARE page_main
+
+- --
+Tobias McNulty (tobias at ppckernel.org)             Mobile: (607) 227-5699
+http://cs.earlham.edu/~tobias
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFHSg1U1x/AN8ZLi94RAuDtAJ9l6VilCQY0fQhxfdJoXw/cxjfsrwCdGs4b
+tp74qf/KyNq9wwJOYJ1StS8=
+=zxRi
+-----END PGP SIGNATURE-----
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: destar-unicode-fix.patch
+Type: text/x-patch
+Size: 700 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/destar-user/attachments/20071125/f50e50d0/attachment.bin>
+
+From tobias at ppckernel.org  Mon Nov 26 02:11:03 2007
+From: tobias at ppckernel.org (Tobias McNulty)
+Date: Sun, 25 Nov 2007 20:11:03 -0500
+Subject: [Destar-user] alias extension that forwards to a call queue
+Message-ID: <474A1D27.6060702@ppckernel.org>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+I created an alias extension 'voicepulse_in' that handles incoming calls
+from the 3 trunks of my voip provider, so I can change how incoming
+calls are routed in a single place.
+
+However, when I call in now, I get this error in the asterisk CLI:
+
+Nov 26 01:02:27 WARNING[2847]: channel.c:2597 ast_request: No channel
+type registered for 'QUEUE'
+Nov 26 01:02:27 NOTICE[2847]: app_dial.c:1056 dial_exec_full: Unable to
+create channel of type 'QUEUE' (cause 66 - Channel not implemented)
+
+The offending lines in extensions.conf seem to be:
+
+exten=voicepulse_in,1,Set(CDR(pbx)=caktus,CDR(userfield)=voicepulse_in,CALLERID(num)=${CALLERIDNUM}-110)
+exten=voicepulse_in,n,Macro(dial-std-exten,QUEUE/voicepulse_q,out-voicepulse_q,110,caktus)
+
+Where voicepulse_q is:
+
+exten=voicepulse_q,1,Queue(voicepulse_q|Tthrn|||20)
+exten=voicepulse_q,n,Goto(caktus,tobias,1)
+
+If I manually set each trunk to dial 'voicepulse_q' directly it seems to
+work fine.
+
+Ideas?
+
+Toby
+- --
+Tobias McNulty (tobias at ppckernel.org)             Mobile: (607) 227-5699
+http://cs.earlham.edu/~tobias
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFHSh0n1x/AN8ZLi94RAsIzAJwI3beGcF3dED7SfAmgTvPbzNBbpQCfSTID
+6BL8/h6ECsAGnOXh+LpudGU=
+=OarU
+-----END PGP SIGNATURE-----
+
+
+From tobias at ppckernel.org  Mon Nov 26 02:52:16 2007
+From: tobias at ppckernel.org (Tobias McNulty)
+Date: Sun, 25 Nov 2007 20:52:16 -0500
+Subject: [Destar-user] automatic voicemail
+Message-ID: <474A26D0.6010309@ppckernel.org>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Is there a way to configure voicemail to come on automatically if (a) a
+user isn't connected and (b) after specified number of seconds, if the
+user doesn't pick up?  Right now it seems like I have to manually enable
+and disable voicemail by setting up the voicemail settings app and
+dialing *94 and *95.
+
+Sorry if the answer is obvious; I've looked through the manual and
+searched through web interface but didn't find anything.
+
+Thanks.
+Toby
+- --
+Tobias McNulty (tobias at ppckernel.org)             Mobile: (607) 227-5699
+http://cs.earlham.edu/~tobias
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFHSibQ1x/AN8ZLi94RAoEmAKCxy8WFWtiFxYm1t4yqaz2i39wx3gCgxlGc
+WlfCxNnB4fJeCVReSePT3NQ=
+=2wO3
+-----END PGP SIGNATURE-----
+
+
+From santiago at avatar.com.co  Mon Nov 26 15:42:22 2007
+From: santiago at avatar.com.co (Santiago Ruano =?iso-8859-1?Q?Rinc=F3n?=)
+Date: Mon, 26 Nov 2007 15:42:22 +0100
+Subject: [Destar-user] automatic voicemail
+In-Reply-To: <474A26D0.6010309@ppckernel.org>
+References: <474A26D0.6010309@ppckernel.org>
+Message-ID: <20071126144221.GD14610@unicauca.edu.co>
+
+On Sun, Nov 25, 2007 at 08:52:16PM -0500, Tobias McNulty wrote:
+> -----BEGIN PGP SIGNED MESSAGE-----
+> Hash: SHA1
+> 
+> Is there a way to configure voicemail to come on automatically if (a) a
+> user isn't connected and (b) after specified number of seconds, if the
+> user doesn't pick up?  Right now it seems like I have to manually enable
+> and disable voicemail by setting up the voicemail settings app and
+> dialing *94 and *95.
+
+Each user can do it through the web interface using its account. 
+
+But I think it must be changed, if global voicemail is enabled, the
+default vm config for a new phone would be enabled too.
+
+
+
+> 
+> Sorry if the answer is obvious; I've looked through the manual and
+> searched through web interface but didn't find anything.
+> 
+> Thanks.
+> Toby
+
+Best regards,
+
+Santiago
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/destar-user/attachments/20071126/4e0b3bb9/attachment.pgp>
+
+From alejandro.rios at avatar.com.co  Mon Nov 26 18:13:03 2007
+From: alejandro.rios at avatar.com.co (=?ISO-8859-1?Q?Alejandro_Rios_Pe=F1a?=)
+Date: Mon, 26 Nov 2007 12:13:03 -0500
+Subject: [Destar-user] automatic voicemail
+In-Reply-To: <20071126144221.GD14610@unicauca.edu.co>
+References: <474A26D0.6010309@ppckernel.org>
+	<20071126144221.GD14610@unicauca.edu.co>
+Message-ID: <474AFE9F.7030706@openboxltda.com>
+
+I also think this should be the default behavior.
+
+However, right now it can be done manually, by doing something like:
+
+# cat *voicemail.conf*  | grep -e "^[0-9]."|awk -F "=" '{print "asterisk -rx \"database put pbx1/VMU "$1" True\""}' > activate_voicemail.sh
+# cat *voicemail.conf*  | grep -e "^[0-9]."|awk -F "=" '{print "asterisk -rx \"database put pbx1/VMBS "$1" True\""}' >> activate_voicemail.sh
+# sh !$
+
+
+Where "pbx1" is the  name of the virtual PBX.
+
+
+Santiago Ruano Rinc?n wrote:
+> On Sun, Nov 25, 2007 at 08:52:16PM -0500, Tobias McNulty wrote:
+>   
+>> -----BEGIN PGP SIGNED MESSAGE-----
+>> Hash: SHA1
+>>
+>> Is there a way to configure voicemail to come on automatically if (a) a
+>> user isn't connected and (b) after specified number of seconds, if the
+>> user doesn't pick up?  Right now it seems like I have to manually enable
+>> and disable voicemail by setting up the voicemail settings app and
+>> dialing *94 and *95.
+>>     
+>
+> Each user can do it through the web interface using its account. 
+>
+> But I think it must be changed, if global voicemail is enabled, the
+> default vm config for a new phone would be enabled too.
+>
+>
+>
+>   
+>> Sorry if the answer is obvious; I've looked through the manual and
+>> searched through web interface but didn't find anything.
+>>
+>> Thanks.
+>> Toby
+>>     
+>
+> Best regards,
+>
+> Santiago
+>   
+> ------------------------------------------------------------------------
+>
+> _______________________________________________
+> Destar-user mailing list
+> Destar-user at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/destar-user
+>   
+
+
+
+From santiago at avatar.com.co  Tue Nov 27 01:14:55 2007
+From: santiago at avatar.com.co (Santiago Ruano =?iso-8859-1?Q?Rinc=F3n?=)
+Date: Tue, 27 Nov 2007 01:14:55 +0100
+Subject: [Destar-user] failure on save config
+In-Reply-To: <474A0D54.9090203@ppckernel.org>
+References: <474A0D54.9090203@ppckernel.org>
+Message-ID: <20071127001455.GA9005@unicauca.edu.co>
+
+On Sun, Nov 25, 2007 at 07:03:32PM -0500, Tobias McNulty wrote:
+...
+> --- destar-svn.orig/configlets.py	2007-11-25 23:47:53.000000000 +0000
+> +++ destar-svn/configlets.py	2007-11-25 23:59:42.000000000 +0000
+> @@ -148,7 +148,7 @@
+>  
+>  		if type(val) == types.IntType:
+>  			self.append("%s=%d" % (name, val))
+> -		elif type(val) == types.StringType:
+> +		elif type(val) in types.StringTypes:
+>  			self.append("%s=%s" % (name, val))
+>  		elif type(val) == types.FloatType:
+>  			self.append("%s=%f" % (name, val))
+
+Are you sure that it works with StringTypes? I don't understand well the
+difference, but I get only exceptions with it.
+
+Regards,
+
+Santiago
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/destar-user/attachments/20071127/455471d1/attachment.pgp>
+
+From tobias at ppckernel.org  Tue Nov 27 02:15:10 2007
+From: tobias at ppckernel.org (Tobias McNulty)
+Date: Mon, 26 Nov 2007 20:15:10 -0500
+Subject: [Destar-user] failure on save config
+In-Reply-To: <20071127001455.GA9005@unicauca.edu.co>
+References: <474A0D54.9090203@ppckernel.org>
+	<20071127001455.GA9005@unicauca.edu.co>
+Message-ID: <474B6F9E.3030806@ppckernel.org>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Santiago Ruano Rinc?n wrote:
+> On Sun, Nov 25, 2007 at 07:03:32PM -0500, Tobias McNulty wrote:
+> ...
+>> --- destar-svn.orig/configlets.py	2007-11-25 23:47:53.000000000 +0000
+>> +++ destar-svn/configlets.py	2007-11-25 23:59:42.000000000 +0000
+>> @@ -148,7 +148,7 @@
+>>  
+>>  		if type(val) == types.IntType:
+>>  			self.append("%s=%d" % (name, val))
+>> -		elif type(val) == types.StringType:
+>> +		elif type(val) in types.StringTypes:
+>>  			self.append("%s=%s" % (name, val))
+>>  		elif type(val) == types.FloatType:
+>>  			self.append("%s=%f" % (name, val))
+> 
+> Are you sure that it works with StringTypes? I don't understand well the
+> difference, but I get only exceptions with it.
+
+This is supported since python version 2.2. I am using Python 2.4.4 on
+Debian.  See the bottom of:
+
+http://www.python.org/doc/2.4.4/lib/module-types.html
+
+StringTypes is "A sequence containing StringType and UnicodeType used to
+facilitate easier checking for any string object. Using this is more
+portable than using a sequence of the two string types constructed
+elsewhere since it only contains UnicodeType if it has been built in the
+running version of Python. For example: isinstance(s, types.StringTypes). "
+
+Toby
+- --
+Tobias McNulty (tobias at ppckernel.org)             Mobile: (607) 227-5699
+http://cs.earlham.edu/~tobias
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFHS2+e1x/AN8ZLi94RAtQ9AKCwYFTG1I5LuXvL1nEoCV9sOY3pFQCfYr4A
+TW+vUYlJEe8rKkaPYivopkQ=
+=2Me1
+-----END PGP SIGNATURE-----
+
+
+From tobias at ppckernel.org  Tue Nov 27 02:23:04 2007
+From: tobias at ppckernel.org (Tobias McNulty)
+Date: Mon, 26 Nov 2007 20:23:04 -0500
+Subject: [Destar-user] failure on save config
+In-Reply-To: <20071127001455.GA9005@unicauca.edu.co>
+References: <474A0D54.9090203@ppckernel.org>
+	<20071127001455.GA9005@unicauca.edu.co>
+Message-ID: <474B7178.4090703@ppckernel.org>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Santiago Ruano Rinc?n wrote:
+
+> Are you sure that it works with StringTypes? I don't understand well the
+> difference, but I get only exceptions with it.
+
+Sorry, maybe I misunderstood.  Do you mean that, after applying that
+patch, you always get an exception when you load that page?  If so, what
+is the exception?
+
+Toby
+- --
+Tobias McNulty (tobias at ppckernel.org)             Mobile: (607) 227-5699
+http://cs.earlham.edu/~tobias
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFHS3F41x/AN8ZLi94RAv+1AKCJcI5E2G/KgqwYAIdrLCp/h44nVwCgjbBM
+S4hXx0F5aMltuPJ1mO3ND2A=
+=JDP0
+-----END PGP SIGNATURE-----
+
+
+From santiago at avatar.com.co  Tue Nov 27 15:11:17 2007
+From: santiago at avatar.com.co (Santiago Ruano =?iso-8859-1?Q?Rinc=F3n?=)
+Date: Tue, 27 Nov 2007 15:11:17 +0100
+Subject: [Destar-user] failure on save config
+In-Reply-To: <474B7178.4090703@ppckernel.org>
+References: <474A0D54.9090203@ppckernel.org>
+	<20071127001455.GA9005@unicauca.edu.co>
+	<474B7178.4090703@ppckernel.org>
+Message-ID: <20071127141116.GA22824@unicauca.edu.co>
+
+On Mon, Nov 26, 2007 at 08:23:04PM -0500, Tobias McNulty wrote:
+> -----BEGIN PGP SIGNED MESSAGE-----
+> Hash: SHA1
+> 
+> Santiago Ruano Rinc?n wrote:
+> 
+> > Are you sure that it works with StringTypes? I don't understand well the
+> > difference, but I get only exceptions with it.
+> 
+> Sorry, maybe I misunderstood.  Do you mean that, after applying that
+> patch, you always get an exception when you load that page?  If so, what
+> is the exception?
+> 
+
+They are like this:
+
+  File "/usr/share/destar/python/page_admin_viewconf.ptl", line 83, in _q_index
+    res = backend.createAsteriskConfig()
+  File "/usr/share/destar/python/backend.py", line 433, in createAsteriskConfig
+    c.createAsteriskConfig()
+  File "/usr/share/destar/python/cfg_opt_transfer.py", line 51, in createAsteriskConfig
+    c.appendValue(self, "blindxfer")
+  File "/usr/share/destar/python/configlets.py", line 165, in appendValue
+    raise Exception(errormsg)
+Exception: unsupported type <type 'str'> for object '#1'
+
+Thanks,
+
+Santiago
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/destar-user/attachments/20071127/bce462d1/attachment.pgp>
+
+From tobias at ppckernel.org  Tue Nov 27 15:18:10 2007
+From: tobias at ppckernel.org (Tobias McNulty)
+Date: Tue, 27 Nov 2007 09:18:10 -0500
+Subject: [Destar-user] failure on save config
+In-Reply-To: <20071127141116.GA22824@unicauca.edu.co>
+References: <474A0D54.9090203@ppckernel.org>
+	<20071127001455.GA9005@unicauca.edu.co>
+	<474B7178.4090703@ppckernel.org>
+	<20071127141116.GA22824@unicauca.edu.co>
+Message-ID: <474C2722.6070407@ppckernel.org>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Santiago Ruano Rinc?n wrote:
+
+>   File "/usr/share/destar/python/page_admin_viewconf.ptl", line 83, in _q_index
+>     res = backend.createAsteriskConfig()
+>   File "/usr/share/destar/python/backend.py", line 433, in createAsteriskConfig
+>     c.createAsteriskConfig()
+>   File "/usr/share/destar/python/cfg_opt_transfer.py", line 51, in createAsteriskConfig
+>     c.appendValue(self, "blindxfer")
+>   File "/usr/share/destar/python/configlets.py", line 165, in appendValue
+>     raise Exception(errormsg)
+> Exception: unsupported type <type 'str'> for object '#1'
+
+Please try the attached patch to see if it solves the problem.  This
+should be applied to the original SVN, not to a version with my patch
+already applied.
+
+Thanks.
+Toby
+- --
+Tobias McNulty (tobias at ppckernel.org)             Mobile: (607) 227-5699
+http://cs.earlham.edu/~tobias
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFHTCci1x/AN8ZLi94RAq2cAJ41VmDQEmWBckketuk37LshlL6XhgCgsuNz
+/Eke8ku5mknWzXLwnF+KXww=
+=Rwq1
+-----END PGP SIGNATURE-----
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: destar-unicode-fix.patch
+Type: text/x-patch
+Size: 944 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/destar-user/attachments/20071127/f9a71c18/attachment.bin>
+
+From santiago at avatar.com.co  Tue Nov 27 16:17:45 2007
+From: santiago at avatar.com.co (Santiago Ruano =?iso-8859-1?Q?Rinc=F3n?=)
+Date: Tue, 27 Nov 2007 16:17:45 +0100
+Subject: [Destar-user] failure on save config
+In-Reply-To: <474C2722.6070407@ppckernel.org>
+References: <474A0D54.9090203@ppckernel.org>
+	<20071127001455.GA9005@unicauca.edu.co>
+	<474B7178.4090703@ppckernel.org>
+	<20071127141116.GA22824@unicauca.edu.co>
+	<474C2722.6070407@ppckernel.org>
+Message-ID: <20071127151745.GB22824@unicauca.edu.co>
+
+On Tue, Nov 27, 2007 at 09:18:10AM -0500, Tobias McNulty wrote:
+...
+> 
+> Please try the attached patch to see if it solves the problem.  This
+> should be applied to the original SVN, not to a version with my patch
+> already applied.
+> 
+
+It seems to work.
+
+Thanks,
+
+Santiago
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.berlios.de/pipermail/destar-user/attachments/20071127/2a1423f6/attachment.pgp>
+

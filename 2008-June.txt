@@ -1,0 +1,46 @@
+From carlos at crgl.com.ar  Sat Jun 28 01:43:39 2008
+From: carlos at crgl.com.ar (Carlos Garcia Lorenzo)
+Date: Fri, 27 Jun 2008 20:43:39 -0300
+Subject: [Destar-user] app_macro.c error
+Message-ID: <48657B2B.7010204@crgl.com.ar>
+
+
+Hi,
+
+Im installing destar for first time. Followed install wiki w/o problems.
+Once logged in, Ive created a couple of sip phones, a sip-trunk and 
+dialout plan.  sip peers  registered no funny erros in the console.
+When I try to make a call I got:
+
+WARNING[20590]: app_macro.c:160 macro_exec: No such context 
+'macro-arrecifes' for macro 'arrecifes'
+
+for every dialout plan, from any of the sip phones.
+
+Here are the versions installed:
+
+Linux debian 2.6.8-3-386 #1 Thu Feb 9 07:17:13 UTC 2006 i686 GNU/Linux
+
+ii  asterisk                    1.2.13~dfsg-2etch4    Open Source 
+Private Branch Exchange (PBX)
+ii  asterisk-classic            1.2.13~dfsg-2etch4    Open Source 
+Private Branch Exchange (PBX) -
+ii  asterisk-config             1.2.13~dfsg-2etch4    config files for 
+asterisk
+ii  asterisk-dev                1.2.13~dfsg-2etch4    development files 
+for asterisk
+ii  asterisk-doc                1.2.13~dfsg-2etch4    documentation for 
+asterisk
+ii  asterisk-sounds-main        1.2.13~dfsg-2etch4    sound files for 
+asterisk
+ii  destar                      0.2.0-4               management 
+interface for the Asterisk PBX
+
+
+
+Appreciate some light on this.
+Regards.
+
+Carlos
+
+

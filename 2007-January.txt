@@ -1,0 +1,29 @@
+From santiago at avatar.com.co  Tue Jan 23 00:18:24 2007
+From: santiago at avatar.com.co (Santiago =?ISO-8859-1?Q?Jos=E9?= Ruano =?ISO-8859-1?Q?Rinc=F3n?=)
+Date: Mon, 22 Jan 2007 18:18:24 -0500
+Subject: [Destar-user] DeStar 0.2.2 released!
+Message-ID: <1169507904.10114.19.camel@localhost.localdomain>
+
+Hello,
+
+I'm glad to announce that DeStar 0.2.2 version has been released. This
+release contains a large number of bugfixes and new features, see
+CHANGELOG.txt for the full list.
+
+You can find it in the usual place:
+
+http://developer.berlios.de/project/showfiles.php?group_id=2112
+
+Thanks for using DeStar,
+
+Santiago Ruano Rinc?n
+http://destar.berlios.de
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Esta parte del mensaje est? firmada	digitalmente
+URL: <https://lists.berlios.de/pipermail/destar-user/attachments/20070122/b6b21c19/attachment.pgp>
+

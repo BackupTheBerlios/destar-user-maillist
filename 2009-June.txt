@@ -1,0 +1,24 @@
+From destar-dev-bounces at lists.berlios.de  Fri Jun  5 11:01:31 2009
+From: destar-dev-bounces at lists.berlios.de (destar-dev-bounces at lists.berlios.de)
+Date: Fri, 05 Jun 2009 11:01:31 +0200
+Subject: [Destar-user] Your message to Destar-dev awaits moderator approval
+Message-ID: <mailman.11265.1244192491.5339.destar-dev@lists.berlios.de>
+
+Your mail to 'Destar-dev' with the subject
+
+    Fwd: image.jpg
+
+Is being held until the list moderator can review it for approval.
+
+The reason it is being held:
+
+    Message body is too big: 518350 bytes with a limit of 150 KB
+
+Either the message will get posted to the list, or you will receive
+notification of the moderator's decision.  If you would like to cancel
+this posting, please visit the following URL:
+
+    https://lists.berlios.de/mailman/confirm/destar-dev/5a409f22b04a51a5a61c27056c7228defe714f17
+
+
+

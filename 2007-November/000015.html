@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Destar-user] failure on save config
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/destar-user/2007-November/index.html" >
+   <LINK REL="made" HREF="mailto:destar-user%40lists.berlios.de?Subject=Re%3A%20%5BDestar-user%5D%20failure%20on%20save%20config&In-Reply-To=%3C20071127001455.GA9005%40unicauca.edu.co%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000010.html">
+   <LINK REL="Next"  HREF="000016.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Destar-user] failure on save config</H1>
+    <B>Santiago Ruano Rinc&#243;n</B> 
+    <A HREF="mailto:destar-user%40lists.berlios.de?Subject=Re%3A%20%5BDestar-user%5D%20failure%20on%20save%20config&In-Reply-To=%3C20071127001455.GA9005%40unicauca.edu.co%3E"
+       TITLE="[Destar-user] failure on save config">santiago at avatar.com.co
+       </A><BR>
+    <I>Tue Nov 27 01:14:55 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000010.html">[Destar-user] failure on save config
+</A></li>
+        <LI>Next message: <A HREF="000016.html">[Destar-user] failure on save config
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sun, Nov 25, 2007 at 07:03:32PM -0500, Tobias McNulty wrote:
+...
+&gt;<i> --- destar-svn.orig/configlets.py	2007-11-25 23:47:53.000000000 +0000
+</I>&gt;<i> +++ destar-svn/configlets.py	2007-11-25 23:59:42.000000000 +0000
+</I>&gt;<i> @@ -148,7 +148,7 @@
+</I>&gt;<i>  
+</I>&gt;<i>  		if type(val) == types.IntType:
+</I>&gt;<i>  			self.append(&quot;%s=%d&quot; % (name, val))
+</I>&gt;<i> -		elif type(val) == types.StringType:
+</I>&gt;<i> +		elif type(val) in types.StringTypes:
+</I>&gt;<i>  			self.append(&quot;%s=%s&quot; % (name, val))
+</I>&gt;<i>  		elif type(val) == types.FloatType:
+</I>&gt;<i>  			self.append(&quot;%s=%f&quot; % (name, val))
+</I>
+Are you sure that it works with StringTypes? I don't understand well the
+difference, but I get only exceptions with it.
+
+Regards,
+
+Santiago
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/destar-user/attachments/20071127/455471d1/attachment.pgp">https://lists.berlios.de/pipermail/destar-user/attachments/20071127/455471d1/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000010.html">[Destar-user] failure on save config
+</A></li>
+	<LI>Next message: <A HREF="000016.html">[Destar-user] failure on save config
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/destar-user">More information about the Destar-user
+mailing list</a><br>
+</body></html>

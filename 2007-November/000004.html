@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Destar-user] Adding custom IAX/SIP trunks
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/destar-user/2007-November/index.html" >
+   <LINK REL="made" HREF="mailto:destar-user%40lists.berlios.de?Subject=Re%3A%20%5BDestar-user%5D%20Adding%20custom%20IAX/SIP%20trunks&In-Reply-To=%3C4739F042.7050305%40openboxltda.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000003.html">
+   <LINK REL="Next"  HREF="000005.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Destar-user] Adding custom IAX/SIP trunks</H1>
+    <B>Alejandro Rios Pe&#241;a</B> 
+    <A HREF="mailto:destar-user%40lists.berlios.de?Subject=Re%3A%20%5BDestar-user%5D%20Adding%20custom%20IAX/SIP%20trunks&In-Reply-To=%3C4739F042.7050305%40openboxltda.com%3E"
+       TITLE="[Destar-user] Adding custom IAX/SIP trunks">alejandro.rios at avatar.com.co
+       </A><BR>
+    <I>Tue Nov 13 19:43:14 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000003.html">[Destar-user] Adding custom IAX/SIP trunks
+</A></li>
+        <LI>Next message: <A HREF="000005.html">[Destar-user] Adding custom IAX/SIP trunks
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4">[ date ]</a>
+              <a href="thread.html#4">[ thread ]</a>
+              <a href="subject.html#4">[ subject ]</a>
+              <a href="author.html#4">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello tobias.
+
+Pleas try to use last svn trunk:
+
+  /svn checkout <A HREF="svn://svn.berlios.de/destar/trunk/">svn://svn.berlios.de/destar/trunk/</A>
+
+
+Or if you want, you could also use the last debian package available in 
+experimental:
+
+  <A HREF="http://packages.debian.org/experimental/destar">http://packages.debian.org/experimental/destar</A>
+
+
+Also, if the normal sip trunk configlet does not meet your provider 
+setup, you can always make a new configlet and help us extens DeStar:
+
+ <A HREF="http://openfacts.berlios.de/index-en.phtml?title=DestarCustomConfiglet">http://openfacts.berlios.de/index-en.phtml?title=DestarCustomConfiglet</A>
+
+
+Thanks for using DeStar.
+
+
+Tobias McNulty wrote:
+&gt;<i> -----BEGIN PGP SIGNED MESSAGE-----
+</I>&gt;<i> Hash: SHA1
+</I>&gt;<i>
+</I>&gt;<i> I'm trying to connect Asterisk to a VoicePulse account with DeStar.  I
+</I>&gt;<i> don't think the IAX or SIP trunk forms provide enough flexibility for me
+</I>&gt;<i> to do this, however.  I see two potential ways to accomplish this:
+</I>&gt;<i>
+</I>&gt;<i> 1) create the config file manually and somehow tell DeStar to include it
+</I>&gt;<i> (is this possible?)
+</I>&gt;<i>
+</I>&gt;<i> 2) write my own configurator for VoicePulse.  I looked at the format of
+</I>&gt;<i> the existing config generators and it looks quite simple, so I wouldn't
+</I>&gt;<i> mind doing this.  However, whenever I tried to generate a FWD or Iaxtel
+</I>&gt;<i> trunk (just for an example, I don't actually have an account), it
+</I>&gt;<i> crashed.  Are these supposedly working?  Should I install 0.2.2 from source?
+</I>&gt;<i>
+</I>&gt;<i> I'm just running the package in Debian stable (etch).  I can post the
+</I>&gt;<i> error messages if this problem isn't known yet.
+</I>&gt;<i>
+</I>&gt;<i> Otherwise the software looks great and I'm really looking forward to
+</I>&gt;<i> using it more.  This is coming from someone who's spent a week+ trying
+</I>&gt;<i> to get freepbx running on Debian without taking over his entire system.  ;)
+</I>&gt;<i>
+</I>&gt;<i> Nice work.
+</I>&gt;<i>
+</I>&gt;<i> Toby
+</I>&gt;<i> - --
+</I>&gt;<i> Tobias McNulty (<A HREF="https://lists.berlios.de/mailman/listinfo/destar-user">tobias at ppckernel.org</A>)             Mobile: (607) 227-5699
+</I>&gt;<i> <A HREF="http://cs.earlham.edu/~tobias">http://cs.earlham.edu/~tobias</A>
+</I>&gt;<i> -----BEGIN PGP SIGNATURE-----
+</I>&gt;<i> Version: GnuPG v1.4.6 (GNU/Linux)
+</I>&gt;<i>
+</I>&gt;<i> iD8DBQFHORDh1x/AN8ZLi94RAloEAKCY9Ysj9bel6/96WcdID8LaaH82hgCgitLX
+</I>&gt;<i> 4E9JwkNpRf2PNLGCaZ+3NOg=
+</I>&gt;<i> =CubL
+</I>&gt;<i> -----END PGP SIGNATURE-----
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Destar-user mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/destar-user">Destar-user at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/destar-user">https://lists.berlios.de/mailman/listinfo/destar-user</A>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000003.html">[Destar-user] Adding custom IAX/SIP trunks
+</A></li>
+	<LI>Next message: <A HREF="000005.html">[Destar-user] Adding custom IAX/SIP trunks
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4">[ date ]</a>
+              <a href="thread.html#4">[ thread ]</a>
+              <a href="subject.html#4">[ subject ]</a>
+              <a href="author.html#4">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/destar-user">More information about the Destar-user
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,134 @@
+From juan.m.coronado at gmail.com  Thu Jul  3 21:17:34 2008
+From: juan.m.coronado at gmail.com (=?UTF-8?Q?Juan_Manuel_Coronado_Z=C3=BA=C3=B1iga?=)
+Date: Thu, 3 Jul 2008 14:17:34 -0500
+Subject: [Destar-user] app_macro.c error
+In-Reply-To: <48657B2B.7010204@crgl.com.ar>
+References: <48657B2B.7010204@crgl.com.ar>
+Message-ID: <c8d9da6f0807031217r135e2130l543ca1977cef1acd@mail.gmail.com>
+
+Hi Carlos,
+
+
+On Fri, Jun 27, 2008 at 6:43 PM, Carlos Garcia Lorenzo <carlos at crgl.com.ar>
+wrote:
+
+>
+> Hi,
+>
+> Im installing destar for first time. Followed install wiki w/o problems.
+> Once logged in, Ive created a couple of sip phones, a sip-trunk and
+> dialout plan.  sip peers  registered no funny erros in the console.
+> When I try to make a call I got:
+>
+> WARNING[20590]: app_macro.c:160 macro_exec: No such context
+> 'macro-arrecifes' for macro 'arrecifes'
+>
+> for every dialout plan, from any of the sip phones.
+>
+> Here are the versions installed:
+>
+> Linux debian 2.6.8-3-386 #1 Thu Feb 9 07:17:13 UTC 2006 i686 GNU/Linux
+>
+> ii  asterisk                    1.2.13~dfsg-2etch4    Open Source
+> Private Branch Exchange (PBX)
+> ii  asterisk-classic            1.2.13~dfsg-2etch4    Open Source
+> Private Branch Exchange (PBX) -
+> ii  asterisk-config             1.2.13~dfsg-2etch4    config files for
+> asterisk
+> ii  asterisk-dev                1.2.13~dfsg-2etch4    development files
+> for asterisk
+> ii  asterisk-doc                1.2.13~dfsg-2etch4    documentation for
+> asterisk
+> ii  asterisk-sounds-main        1.2.13~dfsg-2etch4    sound files for
+> asterisk
+> ii  destar                      0.2.0-4               management
+> interface for the Asterisk PBX
+>
+>
+It looks to me as a bug in the debian package of Destar or something. Have
+you tried compiling from the svn trunk?
+
+Regards
+
+--
+jmacz
+
+
+>
+> Appreciate some light on this.
+> Regards.
+>
+> Carlos
+> _______________________________________________
+> Destar-user mailing list
+> Destar-user at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/destar-user
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/destar-user/attachments/20080703/491f0b66/attachment.html>
+
+From tzafrir.cohen at xorcom.com  Fri Jul  4 12:08:56 2008
+From: tzafrir.cohen at xorcom.com (Tzafrir Cohen)
+Date: Fri, 4 Jul 2008 13:08:56 +0300
+Subject: [Destar-user] app_macro.c error
+In-Reply-To: <c8d9da6f0807031217r135e2130l543ca1977cef1acd@mail.gmail.com>
+References: <48657B2B.7010204@crgl.com.ar>
+	<c8d9da6f0807031217r135e2130l543ca1977cef1acd@mail.gmail.com>
+Message-ID: <20080704100856.GI26157@xorcom.com>
+
+On Thu, Jul 03, 2008 at 02:17:34PM -0500, Juan Manuel Coronado Z??iga wrote:
+> Hi Carlos,
+> 
+> 
+> On Fri, Jun 27, 2008 at 6:43 PM, Carlos Garcia Lorenzo <carlos at crgl.com.ar>
+> wrote:
+> 
+> >
+> > Hi,
+> >
+> > Im installing destar for first time. Followed install wiki w/o problems.
+> > Once logged in, Ive created a couple of sip phones, a sip-trunk and
+> > dialout plan.  sip peers  registered no funny erros in the console.
+> > When I try to make a call I got:
+> >
+> > WARNING[20590]: app_macro.c:160 macro_exec: No such context
+> > 'macro-arrecifes' for macro 'arrecifes'
+> >
+> > for every dialout plan, from any of the sip phones.
+> >
+> > Here are the versions installed:
+> >
+> > Linux debian 2.6.8-3-386 #1 Thu Feb 9 07:17:13 UTC 2006 i686 GNU/Linux
+> >
+> > ii  asterisk                    1.2.13~dfsg-2etch4    Open Source
+> > Private Branch Exchange (PBX)
+> > ii  asterisk-classic            1.2.13~dfsg-2etch4    Open Source
+> > Private Branch Exchange (PBX) -
+> > ii  asterisk-config             1.2.13~dfsg-2etch4    config files for
+> > asterisk
+> > ii  asterisk-dev                1.2.13~dfsg-2etch4    development files
+> > for asterisk
+> > ii  asterisk-doc                1.2.13~dfsg-2etch4    documentation for
+> > asterisk
+> > ii  asterisk-sounds-main        1.2.13~dfsg-2etch4    sound files for
+> > asterisk
+> > ii  destar                      0.2.0-4               management
+> > interface for the Asterisk PBX
+> >
+> >
+> It looks to me as a bug in the debian package of Destar or something. Have
+> you tried compiling from the svn trunk?
+
+Is the Debian maintainer listening? Any new package from trunk in time
+for Lenny?
+
+Or should DeStart be removed from Lenny?
+
+-- 
+               Tzafrir Cohen
+icq#16849755              jabber:tzafrir.cohen at xorcom.com
++972-50-7952406           mailto:tzafrir.cohen at xorcom.com
+http://www.xorcom.com  iax:guest at local.xorcom.com/tzafrir
+
+

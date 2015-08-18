@@ -1,0 +1,61 @@
+From acabrera at sisdis.gov.ar  Thu Apr 12 20:34:41 2007
+From: acabrera at sisdis.gov.ar (Alejandro Cabrera Obed)
+Date: Thu, 12 Apr 2007 15:34:41 -0300 (ART)
+Subject: [Destar-user] Set user and password for web interface
+Message-ID: <26727.200.5.114.138.1176402881.squirrel@servicios.sisdis.gov.ar>
+
+Dear all, I have Destar running on an Asterisk server. From another
+machine I enter http://IP_Asterisk:8080, and I get the login asking me
+user and password. I check /etc/asterisk/destar_cfg.py but I don't know
+where I have to set user and password for full Asterisk administration,
+because I can't login for that reason (I no have user and password).
+
+Thanks a lot,
+
+Alejandro
+
+
+From dasenjo at unicauca.edu.co  Sat Apr 14 08:32:29 2007
+From: dasenjo at unicauca.edu.co (Diego Andres Asenjo G.)
+Date: Sat, 14 Apr 2007 01:32:29 -0500 (COT)
+Subject: [Destar-user] Set user and password for web interface
+In-Reply-To: <26727.200.5.114.138.1176402881.squirrel@servicios.sisdis.gov.ar>
+References: <26727.200.5.114.138.1176402881.squirrel@servicios.sisdis.gov.ar>
+Message-ID: <Pine.LNX.4.64.0704140122560.30559@afrodita.unicauca.edu.co>
+
+Hi Alejandro,
+
+
+> Dear all, I have Destar running on an Asterisk server. From another
+> machine I enter http://IP_Asterisk:8080, and I get the login asking me
+> user and password. I check /etc/asterisk/destar_cfg.py but I don't know
+> where I have to set user and password for full Asterisk administration,
+> because I can't login for that reason (I no have user and password).
+
+If you installed destar and have a destar_cfg.py maybe is a copy of the
+examples/destar_cfg.py one. If so, the default password for the admin user
+is ad26. (with the final point)
+
+Anyway, if there is a destar_cfg.py and you can't log in automatically, 
+you should search for a CfgOptUser object in the file in order to get 
+valid user login information.
+
+If you have more questions, write us again or contact us in #destar at 
+irc.freenode.net.
+
+Please, let us know about the situation.
+
+Bye bye.
+
+
+>
+> Thanks a lot,
+>
+> Alejandro
+> _______________________________________________
+> Destar-user mailing list
+> Destar-user at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/destar-user
+>
+
+

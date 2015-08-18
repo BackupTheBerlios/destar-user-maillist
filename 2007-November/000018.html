@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Destar-user] failure on save config
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/destar-user/2007-November/index.html" >
+   <LINK REL="made" HREF="mailto:destar-user%40lists.berlios.de?Subject=Re%3A%20%5BDestar-user%5D%20failure%20on%20save%20config&In-Reply-To=%3C20071127141116.GA22824%40unicauca.edu.co%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000017.html">
+   <LINK REL="Next"  HREF="000019.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Destar-user] failure on save config</H1>
+    <B>Santiago Ruano Rinc&#243;n</B> 
+    <A HREF="mailto:destar-user%40lists.berlios.de?Subject=Re%3A%20%5BDestar-user%5D%20failure%20on%20save%20config&In-Reply-To=%3C20071127141116.GA22824%40unicauca.edu.co%3E"
+       TITLE="[Destar-user] failure on save config">santiago at avatar.com.co
+       </A><BR>
+    <I>Tue Nov 27 15:11:17 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000017.html">[Destar-user] failure on save config
+</A></li>
+        <LI>Next message: <A HREF="000019.html">[Destar-user] failure on save config
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18">[ date ]</a>
+              <a href="thread.html#18">[ thread ]</a>
+              <a href="subject.html#18">[ subject ]</a>
+              <a href="author.html#18">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mon, Nov 26, 2007 at 08:23:04PM -0500, Tobias McNulty wrote:
+&gt;<i> -----BEGIN PGP SIGNED MESSAGE-----
+</I>&gt;<i> Hash: SHA1
+</I>&gt;<i> 
+</I>&gt;<i> Santiago Ruano Rinc&#243;n wrote:
+</I>&gt;<i> 
+</I>&gt;<i> &gt; Are you sure that it works with StringTypes? I don't understand well the
+</I>&gt;<i> &gt; difference, but I get only exceptions with it.
+</I>&gt;<i> 
+</I>&gt;<i> Sorry, maybe I misunderstood.  Do you mean that, after applying that
+</I>&gt;<i> patch, you always get an exception when you load that page?  If so, what
+</I>&gt;<i> is the exception?
+</I>&gt;<i> 
+</I>
+They are like this:
+
+  File &quot;/usr/share/destar/python/page_admin_viewconf.ptl&quot;, line 83, in _q_index
+    res = backend.createAsteriskConfig()
+  File &quot;/usr/share/destar/python/backend.py&quot;, line 433, in createAsteriskConfig
+    c.createAsteriskConfig()
+  File &quot;/usr/share/destar/python/cfg_opt_transfer.py&quot;, line 51, in createAsteriskConfig
+    c.appendValue(self, &quot;blindxfer&quot;)
+  File &quot;/usr/share/destar/python/configlets.py&quot;, line 165, in appendValue
+    raise Exception(errormsg)
+Exception: unsupported type &lt;type 'str'&gt; for object '#1'
+
+Thanks,
+
+Santiago
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/destar-user/attachments/20071127/bce462d1/attachment.pgp">https://lists.berlios.de/pipermail/destar-user/attachments/20071127/bce462d1/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000017.html">[Destar-user] failure on save config
+</A></li>
+	<LI>Next message: <A HREF="000019.html">[Destar-user] failure on save config
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18">[ date ]</a>
+              <a href="thread.html#18">[ thread ]</a>
+              <a href="subject.html#18">[ subject ]</a>
+              <a href="author.html#18">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/destar-user">More information about the Destar-user
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Destar-user] failure on save config
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/destar-user/2007-November/index.html" >
+   <LINK REL="made" HREF="mailto:destar-user%40lists.berlios.de?Subject=Re%3A%20%5BDestar-user%5D%20failure%20on%20save%20config&In-Reply-To=%3C474A0D54.9090203%40ppckernel.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000009.html">
+   <LINK REL="Next"  HREF="000015.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Destar-user] failure on save config</H1>
+    <B>Tobias McNulty</B> 
+    <A HREF="mailto:destar-user%40lists.berlios.de?Subject=Re%3A%20%5BDestar-user%5D%20failure%20on%20save%20config&In-Reply-To=%3C474A0D54.9090203%40ppckernel.org%3E"
+       TITLE="[Destar-user] failure on save config">tobias at ppckernel.org
+       </A><BR>
+    <I>Mon Nov 26 01:03:32 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000009.html">[Destar-user] Adding custom IAX/SIP trunks
+</A></li>
+        <LI>Next message: <A HREF="000015.html">[Destar-user] failure on save config
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10">[ date ]</a>
+              <a href="thread.html#10">[ thread ]</a>
+              <a href="subject.html#10">[ subject ]</a>
+              <a href="author.html#10">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Using the latest SVN I get a crash when I click &quot;View/Save
+Configuration&quot; under the Administration menu.  The problem is that
+appendValue in configlets.py needs to write a unicode string but it
+doesn't seem to know about unicode.  Attached is a patch that fixes the
+problem for me, and includes better debugging info if an unsupported
+type is discovered again.
+
+Best,
+Toby
+
+
+Traceback (most recent call last):
+  File &quot;/usr/lib/python2.4/site-packages/quixote/publish.py&quot;, line 278,
+in process_request
+    output = self.try_publish(request)
+  File &quot;/usr/lib/python2.4/site-packages/quixote/publish.py&quot;, line 256,
+in try_publish
+    output = self.root_directory._q_traverse(components)
+  File &quot;/root/destar-svn/page_main.ptl&quot;, line 168, in _q_traverse
+    return Directory._q_traverse(self, path)
+  File &quot;/usr/lib/python2.4/site-packages/quixote/directory.py&quot;, line 66,
+in _q_traverse
+    return obj._q_traverse(path)
+  File &quot;/usr/lib/python2.4/site-packages/quixote/directory.py&quot;, line 94,
+in _q_traverse
+    return super(AccessControlled, self)._q_traverse(path)
+  File &quot;/usr/lib/python2.4/site-packages/quixote/directory.py&quot;, line 66,
+in _q_traverse
+    return obj._q_traverse(path)
+  File &quot;/usr/lib/python2.4/site-packages/quixote/directory.py&quot;, line 94,
+in _q_traverse
+    return super(AccessControlled, self)._q_traverse(path)
+  File &quot;/usr/lib/python2.4/site-packages/quixote/directory.py&quot;, line 70,
+in _q_traverse
+    return obj()
+  File &quot;/root/destar-svn/page_admin_viewconf.ptl&quot;, line 83, in _q_index
+    res = backend.createAsteriskConfig()
+  File &quot;/root/destar-svn/backend.py&quot;, line 433, in createAsteriskConfig
+    c.createAsteriskConfig()
+  File &quot;/root/destar-svn/cfg_opt_voicemail.py&quot;, line 78, in
+createAsteriskConfig
+    c.appendValue(self,&quot;fromstring&quot;)
+  File &quot;/root/destar-svn/configlets.py&quot;, line 162, in appendValue
+    raise Exception
+Exception
+
+Form:
+
+Cookies:
+QX_session      &lt;snip&gt;
+
+Environment:
+ACCEPT_ENCODING gzip,deflate
+CONTENT_LENGTH  0
+CONTENT_TYPE
+GATEWAY_INTERFACE CGI/1.1
+HTTP_ACCEPT
+text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+HTTP_ACCEPT_CHARSET ISO-8859-1,utf-8;q=0.7,*;q=0.7
+HTTP_ACCEPT_ENCODING gzip,deflate
+HTTP_ACCEPT_LANGUAGE en-us,en;q=0.5
+HTTP_CONNECTION keep-alive
+HTTP_COOKIE     QX_session=&quot;&lt;snip&gt;&quot;
+HTTP_HOST       &lt;snip&gt;:8080
+HTTP_KEEP_ALIVE 300
+HTTP_REFERER    <A HREF="http://&lt;snip">http://&lt;snip</A>&gt;:8080/user/info/
+HTTP_USER_AGENT Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.8)
+Gecko/20071022 Ubuntu/7.10 (gutsy) Firefox/2.0.0.8
+PATH_INFO       /admin/viewconf/
+QUERY_STRING
+REMOTE_ADDR     &lt;snip&gt;
+REMOTE_PORT     28954
+REMOTE_USER     admin
+REQUEST_METHOD  GET
+REQUEST_URI     /admin/viewconf/
+SCRIPT_FILENAME
+SCRIPT_NAME
+SERVER_NAME     &lt;snip&gt;
+SERVER_PORT     8080
+SERVER_PROTOCOL HTTP/1.1
+SERVER_SOFTWARE page_main
+
+- --
+Tobias McNulty (<A HREF="https://lists.berlios.de/mailman/listinfo/destar-user">tobias at ppckernel.org</A>)             Mobile: (607) 227-5699
+<A HREF="http://cs.earlham.edu/~tobias">http://cs.earlham.edu/~tobias</A>
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFHSg1U1x/AN8ZLi94RAuDtAJ9l6VilCQY0fQhxfdJoXw/cxjfsrwCdGs4b
+tp74qf/KyNq9wwJOYJ1StS8=
+=zxRi
+-----END PGP SIGNATURE-----
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: destar-unicode-fix.patch
+Type: text/x-patch
+Size: 700 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/destar-user/attachments/20071125/f50e50d0/attachment.bin">https://lists.berlios.de/pipermail/destar-user/attachments/20071125/f50e50d0/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000009.html">[Destar-user] Adding custom IAX/SIP trunks
+</A></li>
+	<LI>Next message: <A HREF="000015.html">[Destar-user] failure on save config
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10">[ date ]</a>
+              <a href="thread.html#10">[ thread ]</a>
+              <a href="subject.html#10">[ subject ]</a>
+              <a href="author.html#10">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/destar-user">More information about the Destar-user
+mailing list</a><br>
+</body></html>
